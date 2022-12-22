@@ -34,9 +34,9 @@ object Module {
                 val newUrl = chain.request().url
                     .newBuilder()
                     .addQueryParameter(Constants.TS,currentTimesTamp)
-                    .addQueryParameter(Constants.API_KEY, Constants.PRIVATE_KEY)
+                    .addQueryParameter(Constants.API_KEY, Constants.PUBLIC_KEY)
                     .addQueryParameter(Constants.HASH,
-                        provideToMd5Hash(currentTimesTamp + Constants.PUBLIC_KEY + Constants.PRIVATE_KEY))
+                        provideToMd5Hash(currentTimesTamp + Constants.PRIVATE_KEY + Constants.PUBLIC_KEY))
                     .build()
                 val newRequest = chain.request()
                     .newBuilder()
